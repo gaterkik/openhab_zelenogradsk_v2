@@ -1,0 +1,2 @@
+astro:sun:home [ geolocation="54.96348,20.49494", interval=300]
+astro:moon:home [ geolocation="54.96348,20.49494", interval=300]

@@ -1,0 +1,42 @@
+//
+ARIES=♈ Овен
+TAURUS=♉ Телец
+GEMINI=♊ Близнесы
+CANCER=♋ Рак
+LEO=♌ Лев
+VIRGO=♍ Дева
+LIBRA=♎ Весы
+SCORPIO=♏ Скорпион
+SAGITTARIUS=♐ Стрелец
+CAPRICORN=♑ Козерог
+AQUARIUS=♒ Водолей
+PISCES=♓ Рыбы
+
+//
+SPRING=Весна
+SUMMER=Лето
+AUTUMN=Осень
+WINTER=Зима
+
+//
+SUN_RISE=Рассвет
+ASTRO_DAWN=Закат
+NAUTIC_DAWN=Морской закат
+CIVIL_DAWN=Гражданский закат
+CIVIL_DUSK=Гражданский рассвет
+NAUTIC_DUSK=Морской рассвет
+ASTRO_DUSK=Рассвет
+SUN_SET=Зенит
+DAYLIGHT=День
+NOON=Полдень
+NIGHT=Ночь
+
+//
+NEW=Новолуние
+WAXING_CRESCENT=Растущий полумесяц
+FIRST_QUARTER=Первая четверть
+WAXING_GIBBOUS=Растущая выпуклая луна
+FULL=Полнолуние
+WANING_GIBBOUS=Убывающая выпуклая луна
+THIRD_QUARTER=Последняя четверть
+WANING_CRESCENT=Убывающий полумесяц
