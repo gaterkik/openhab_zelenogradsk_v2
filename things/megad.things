@@ -25,7 +25,7 @@ Bridge megad:tcp:incoming "Мост для входящих на порту 8989
 		Thing standard outputD0P23 			"радиатор детская"  	 @ "Отопление"	 [port="23", refresh="10"]	//радиатор детская
 		Thing standard outputD0P24 			"радиатор спальня"  	 @ "Отопление"	 [port="24", refresh="10"]	//радиатор спальня
 		Thing standard DimmerD0P25 			"спальня" 		 	     @ "Свет"		 [port="25", refresh="10"]	//свет спальня
-		Thing standard outputD0P26 [port="26", refresh="10"]	//вытяжка
+		Thing standard outputD0P26 			"вытяжка"								 [port="26", refresh="10"]	//вытяжка
 		Thing standard DimmerD0P27 			"детскаял" 			     @ "Свет"		 [port="27", refresh="10"]	//свет детская
 		Thing standard DimmerD0P28 			"кухня основной" 	     @ "Свет"		 [port="28", refresh="10"]	//свет кухня основной
  
@@ -33,11 +33,11 @@ Bridge megad:tcp:incoming "Мост для входящих на порту 8989
 	
 	Bridge device megad16 "MegaD-2561_16" [hostname="192.168.0.16", password="sec"]{
 
-		Thing standard inputD1P15 [port="15", refresh="10"]	//датчик движения кухня
-		Thing standard inputD1P16 [port="16", refresh="10"]	//датчик движения спальня
-		Thing standard inputD1P17 [port="17", refresh="10"]	//датчик движения детская
-		Thing standard inputD1P18 [port="18", refresh="10"]	//датчик движения ванная
-		Thing standard inputD1P19 [port="19", refresh="10"]	//датчик движения вход
-		Thing standard outputD1P28 [port="28", refresh="10"]	//клапан на воде
+		Thing standard inputD1P15 "датчик движения кухня" [port="15", refresh="10"]	//датчик движения кухня
+		Thing standard inputD1P16 "датчик движения спальня" [port="16", refresh="10"]	//датчик движения спальня
+		Thing standard inputD1P17 "датчик движения детская" [port="17", refresh="10"]	//датчик движения детская
+		Thing standard inputD1P18 "датчик движения ванная" [port="18", refresh="10"]	//датчик движения ванная
+		Thing standard inputD1P19 "датчик движения вход" [port="19", refresh="10"]	//датчик движения вход
+		Thing standard outputD1P28 "клапан на воде" [port="28", refresh="10"]	//клапан на воде
 	}
 }
