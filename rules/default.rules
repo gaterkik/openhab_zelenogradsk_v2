@@ -1,4 +1,5 @@
 var int Timeout
+var int Timeout1
 //------------------------------------------------------------------------
 // obrabotka nazatiya viklyuchatelya v koridore. men'she sekundi - vkluchaem/vikluchaem. bol'she sekundi - vikluchaem svet vo vsei kvartire
 
@@ -35,7 +36,7 @@ result = result / 1000
 end
 
 //------------------------------------------------------------------------
-// obrabotka nazatiya viklyuchatelya v koridore. men'she sekundi - vkluchaem/vikluchaem. bol'she sekundi - vikluchaem svet vo vsei kvartire
+// Обработка нажатия выключателя в спальне ближний к кровати. Меньше секунды просто переключение, дольше секунды - режим сна
 
 rule "Bedroom start timer"
 when Item itemD0P18 changed to ON then
@@ -159,6 +160,7 @@ then
 			sendCommand(itemD0P10, 100)
 			postUpdate(itemD0P10, 100)
 		}
+		logInfo("kitchen", "нажали выключатель 1")
 end
 
 //--------------------------------------------------
@@ -176,6 +178,7 @@ then
 			sendCommand(itemD0P28, 100)
 			postUpdate(itemD0P28, 100)
 		}
+		logInfo("kitchen", "нажали выключатель 1")
 end
 //--------------------------------------------------
 rule "15" //нажали выключатель детская 1

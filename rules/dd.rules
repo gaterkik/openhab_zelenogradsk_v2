@@ -10,6 +10,7 @@ when
     Channel 'astro:sun:home:rise#event' triggered START
 then
     IsItDark.postUpdate(OFF)
+	WeSleepBedroom.postUpdate(OFF)
 end
 //------------------------------------------------------------------------------------------
 
