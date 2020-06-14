@@ -6,7 +6,7 @@ sitemap default label="квартира"{
 				Slider item=itemD0P28 label="Основной"
                 Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность"
 				Colorpicker item=LR_LEDLight_Color
-				Switch item=DDKitchenDisable
+				Switch item=DDKitchenDisable label="Отключить датчик движения" icon="motion"
 			}
 			Frame label="Отопление" {	
 				Switch item=itemD0P9 label="Тёплый пол" icon="radiator" mappings=[ON="off", OFF="on"]
@@ -30,7 +30,8 @@ sitemap default label="квартира"{
 		Group item=itemD0P10 label="Спальня" icon="bedroom"{
 			Frame label="Освещение" {
 				Slider item=itemD0P25 label="Основной"
-				Switch item=DDBedRoomDisable
+				Switch item=DDBedRoomDisable label="Отключить датчик движения" icon="motion"
+				Switch item=WeSleepBedroom label="Режим сна"
 			}	
 			Frame label="Отопление" {	
 				Switch item=itemD0P24 label="Радиатор" icon="radiator" mappings=[ON="off", OFF="on"]
@@ -39,6 +40,7 @@ sitemap default label="квартира"{
 		Group item=itemD0P10 label="Детская" icon="boy_2"{
 			Frame label="Освещение" {
 				Slider item=itemD0P27 label="Основной"
+				Switch item=WeSleepChildrensroom label="Режим сна"
 			}
 			Frame label="Отопление" {	
 				Switch item=itemD0P23 label="Радиатор" icon="radiator" mappings=[ON="off", OFF="on"]
@@ -58,8 +60,8 @@ sitemap default label="квартира"{
 		Switch item=itemAllOff label="Тушим весь свет" 
 		Switch item=itemD0P26 label="Вытяжка" icon="fan"
 		Switch item=itemD1P28 label="Перекрытие воды" icon="faucet"
-		Switch item=DDBedRoomDisable
-		Switch item=DDKitchenDisable
+		//Switch item=DDBedRoomDisable
+		//Switch item=DDKitchenDisable
 		
 	}
 	Frame label="Освещение" {

@@ -101,27 +101,22 @@ then
 				}
 			else // Выключен выключатель ДД на сайте )
 			{
-				if (now.getHours > 0 || now.getHours < 12 || IsItDark.state == ON){  // От 00 до рассвета
+				if (IsItDark.state == ON && WeSleepBedroom == ON){  // И темно и спим
 					sendCommand(itemD0P12, 20)
 					postUpdate(itemD0P12, 20)
-					logInfo("bedroom", "дд в спальне до рассвета - включаем в коридоре")
+					logInfo("bedroom", "дд в спальне ночью - включаем в коридоре")
 					Corridor_MotionTimer.sendCommand(ON)
 				}
 
 				
-				if (now.getHours > 12 || now.getHours < 23 || IsItDark.state == ON){  // От заката до 23
+				if (IsItDark.state == ON && WeSleepBedroom == OFF){  // Уже темно но ещё не спим
 					sendCommand(itemD0P25, 100)
 					postUpdate(itemD0P25, 100)
-					logInfo("bedroom", "dd posle zakata i do 23 - vklu4aem svet v spal'ne")
+					logInfo("bedroom", "дд в спальне вечером - vklu4aem svet v spal'ne")
 					Bedroom_MotionTimer.sendCommand(ON)
 				}
 
-				if (now.getHours > 23){  // От 23 до полуночи
-					sendCommand(itemD0P12, 20)
-					postUpdate(itemD0P12, 20)
-					logInfo("bedroom", "дд в спальне после 23 - включаем в коридоре")
-					Corridor_MotionTimer.sendCommand(ON)
-				}
+				
 				
 			}	
 		}
@@ -141,7 +136,7 @@ rule "Turn off the light in Corridor when the timer is off"
 when        
     Item Corridor_MotionTimer received command OFF 
 then     
-	logInfo("spal'nya", "vikluchaem svet v spal'ne po taimeru")    
+	logInfo("spal'nya", "vikluchaem svet v коридоре po taimeru")    
 	sendCommand(itemD0P12, 0)
 	postUpdate(itemD0P12, 0)
 end

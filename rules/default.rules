@@ -2,13 +2,13 @@ var int Timeout
 //------------------------------------------------------------------------
 // obrabotka nazatiya viklyuchatelya v koridore. men'she sekundi - vkluchaem/vikluchaem. bol'she sekundi - vikluchaem svet vo vsei kvartire
 
-rule "Test"
+rule "Corridor start timer"
 when Item itemD0P2 changed to ON then
  Timeout = now.getMillisOfDay
  logInfo("StartTime", Timeout.toString)
 end
 
-rule "Test1"
+rule "Corridor stop timer"
 when Item itemD0P2 changed to OFF then
 var int Stop = now.getMillisOfDay
 logInfo("StopTime", Timeout.toString)
@@ -30,9 +30,46 @@ result = result / 1000
  else if (result > 1){
  		sendCommand(itemAllOff, ON)
 		postUpdate(itemAllOff, ON)
-		logInfo(" 1 < Timer > 3 seconds", result.toString)
+		logInfo("Timer > 1 sec", result.toString)
  	  } 
 end
+
+//------------------------------------------------------------------------
+// obrabotka nazatiya viklyuchatelya v koridore. men'she sekundi - vkluchaem/vikluchaem. bol'she sekundi - vikluchaem svet vo vsei kvartire
+
+rule "Bedroom start timer"
+when Item itemD0P18 changed to ON then
+ Timeout1 = now.getMillisOfDay
+ logInfo("StartTime", Timeout1.toString)
+end
+
+rule "Bedroom stop timer"
+when Item itemD0P18 changed to OFF then
+var int Stop1 = now.getMillisOfDay
+logInfo("StopTime", Timeout1.toString)
+var int result1 = Stop1 - Timeout1
+result1 = result1 / 1000
+
+ if (result1 <= 1) {
+ 	logInfo("Timer 1 second ", result1.toString)
+ 	if (itemD0P25.state as DecimalType > 0){
+		logInfo("vklu4eno -> viklu4aem", result1.toString)
+        sendCommand(itemD0P25, 0)
+		postUpdate(itemD0P25, 0) 
+    } else {
+		logInfo("viklu4en -> vklu4aem", result1.toString)
+		sendCommand(itemD0P25, 100)
+		postUpdate(itemD0P25, 100)
+    }
+ }
+ else if (result1 > 1){
+		sendCommand(itemD0P25, 0)
+		postUpdate(itemD0P25, 0)
+		postUpdate(WeSleepBedroom, ON)
+		logInfo("Timer > 1 sec", result1.toString)
+ 	  } 
+end
+
 
 //--------------------------------------------------
 rule "0" //нажали выключатель ванная 1  
@@ -189,6 +226,7 @@ then
 		}
 end
 //--------------------------------------------------
+/*
 rule "18" //нажали выключатель спальня 2
 when
 		Item itemD0P18 changed to ON
@@ -204,6 +242,7 @@ then
 			postUpdate(itemD0P25, 100)
 		}
 end
+*/
 //--------------------------------------------------
 rule "alloff" //выключаем всё
 when
@@ -235,7 +274,7 @@ then
 		
 		sendCommand(itemKitchenCountertop, OFF)
 		postUpdate(itemKitchenCountertop, OFF)
-		sendHttpGetRequest("http://192.168.88.14/sec/?pt=35&ws=000000")
+		sendHttpGetRequest("http://192.168.0.15/sec/?pt=35&ws=000000")
 		
 		sendCommand(itemAllOff, OFF)
 		postUpdate(itemAllOff, OFF)

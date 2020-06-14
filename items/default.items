@@ -30,6 +30,10 @@ Switch  Corridor_MotionTimer {expire="5m,command=OFF"}
 Switch DDBedRoomDisable "Спальня. Отключение датчика движения"
 Switch DDKitchenDisable "Кухня. Отключение датчика движения"
 
+Switch WeSleepBedroom "Спальня. Ночной режим"
+Switch WeSleepChildrensroom "Детская. Ночной режим"
+
+
 Color LR_LEDLight_Color "Рабочая поверхность"
 
 Switch itemPHP1 "php script 1"
