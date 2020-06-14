@@ -1,39 +1,37 @@
 Bridge megad:tcp:incoming "Мост для входящих на порту 8989 MegaDevice" [port="8989"]{
 	Bridge device megad15 "MegaD-2561_15" [hostname="192.168.0.15", password="sec"]{
-//		Thing standard megad_Hallway_light_out	"Свет в прихожей" @ "Свет"				[port="15", refresh="5"]
 		
-		Thing standard inputD0P0 [port="0", refresh="10"]	//выключатель ванная 1
-		Thing standard inputD0P1 [port="1", refresh="10"]	//выключатель ванная 2  
-		Thing standard inputD0P2 [port="2", refresh="10"]	//выключатель коридор 1
-		Thing standard inputD0P3 [port="3", refresh="10"]	//выключатель коридор 2
-		Thing standard inputD0P4 [port="4", refresh="10"]	//выключатель кухня 1
-		Thing standard inputD0P5 [port="5", refresh="10"]	//выключатель кухня 2
-		Thing standard inputD0P6 [port="6", refresh="10"]	//выключатель лоджия
-		Thing standard outputD0P7 "тёплый пол туалет"  		 @ "Отопление"   [port="7", refresh="10"] 	//тёплый пол туалет
-		Thing standard outputD0P8 "тёплый пол коридор" 		 @ "Отопление"   [port="8", refresh="10"] 	//тёплый пол коридор
-		Thing standard outputD0P9 "тёплый пол кухня"         @ "Отопление"   [port="9", refresh="10"] 	//тёплый пол кухня
-		Thing standard DimmerD0P10 "свет стол" 		         @ "Свет"   	 [port="10", refresh="10"]  //свет стол
-		Thing standard outputD0P11 "свет коридор 1"          @ "Свет"		 [port="11", refresh="10"]	//свет коридор 1
-		Thing standard DimmerD0P12 "свет коридор 2"    		 @ "Свет"		 [port="12", refresh="10"]	//свет коридор 2
-		Thing standard DimmerD0P13 "свет ванная основной"    @ "Свет"		 [port="13", refresh="10"]	//свет ванная основной
-		Thing standard inputD0P15 [port="15", refresh="10"]	//выключатель детская 1
-		Thing standard inputD0P16 [port="16", refresh="10"]	//выключатель детская 2
-		Thing standard inputD0P17 [port="17", refresh="10"]	//выключатель спальня 1
-		Thing standard inputD0P18 [port="18", refresh="10"]	//выключатель спальня 2
-		Thing standard inputCounterD0P19 [port="19", refresh="10"]	//счётчик воды
-		Thing standard inputCounterD0P21 [port="21", refresh="10"]	//счётчик электроэнергии
-		Thing standard outputD0P22 [port="22", refresh="10"]	//радиатор кухня
-		Thing standard outputD0P23 [port="23", refresh="10"]	//радиатор детская
-		Thing standard outputD0P24 [port="24", refresh="10"]	//радиатор спальня
-		Thing standard DimmerD0P25 [port="25", refresh="10"]	//свет спальня
+		Thing standard inputD0P0 			"ванная 1"  			 @ "Выключатели" [port="0", refresh="10"]	//выключатель ванная 1
+		Thing standard inputD0P1 			"ванная 2"  			 @ "Выключатели" [port="1", refresh="10"]	//выключатель ванная 2  
+		Thing standard inputD0P2 			"коридор 1"  			 @ "Выключатели" [port="2", refresh="10"]	//выключатель коридор 1
+		Thing standard inputD0P3 			"коридор 2"  			 @ "Выключатели" [port="3", refresh="10"]	//выключатель коридор 2
+		Thing standard inputD0P4 			"кухня 1"  				 @ "Выключатели" [port="4", refresh="10"]	//выключатель кухня 1
+		Thing standard inputD0P5 			"кухня 2"				 @ "Выключатели" [port="5", refresh="10"]	//выключатель кухня 2
+		Thing standard inputD0P6 			"лоджия"	  			 @ "Выключатели" [port="6", refresh="10"]	//выключатель лоджия
+		Thing standard outputD0P7 			"тёплый пол туалет"  	 @ "Отопление"   [port="7", refresh="10"] 	//тёплый пол туалет
+		Thing standard outputD0P8 			"тёплый пол коридор" 	 @ "Отопление"   [port="8", refresh="10"] 	//тёплый пол коридор
+		Thing standard outputD0P9 			"тёплый пол кухня"       @ "Отопление"   [port="9", refresh="10"] 	//тёплый пол кухня
+		Thing standard DimmerD0P10 			"свет стол" 		     @ "Свет"   	 [port="10", refresh="10"]  //свет стол
+		Thing standard outputD0P11 			"свет коридор 1"         @ "Свет"		 [port="11", refresh="10"]	//свет коридор 1
+		Thing standard DimmerD0P12 			"свет коридор 2"    	 @ "Свет"		 [port="12", refresh="10"]	//свет коридор 2
+		Thing standard DimmerD0P13		 	"свет ванная основной"   @ "Свет"		 [port="13", refresh="10"]	//свет ванная основной
+		Thing standard inputD0P15 			"детская 1"	  			 @ "Выключатели" [port="15", refresh="10"]	//выключатель детская 1
+		Thing standard inputD0P16 			"детская 2"	  			 @ "Выключатели" [port="16", refresh="10"]	//выключатель детская 2
+		Thing standard inputD0P17 			"спальня 1"	  			 @ "Выключатели" [port="17", refresh="10"]	//выключатель спальня 1
+		Thing standard inputD0P18 			"спальня 2"	  			 @ "Выключатели" [port="18", refresh="10"]	//выключатель спальня 2
+		Thing standard inputCounterD0P19 	"счётчик воды"	  		 @ "Выключатели" [port="19", refresh="10"]	//счётчик воды
+		Thing standard inputCounterD0P21 	"счётчик электроэнергии" @ "Выключатели" [port="21", refresh="10"]	//счётчик электроэнергии
+		Thing standard outputD0P22 			"радиатор кухня"  	 	 @ "Отопление"	 [port="22", refresh="10"]	//радиатор кухня
+		Thing standard outputD0P23 			"радиатор детская"  	 @ "Отопление"	 [port="23", refresh="10"]	//радиатор детская
+		Thing standard outputD0P24 			"радиатор спальня"  	 @ "Отопление"	 [port="24", refresh="10"]	//радиатор спальня
+		Thing standard DimmerD0P25 			"спальня" 		 	     @ "Свет"		 [port="25", refresh="10"]	//свет спальня
 		Thing standard outputD0P26 [port="26", refresh="10"]	//вытяжка
-		Thing standard DimmerD0P27 [port="27", refresh="10"]	//свет детская
-		Thing standard DimmerD0P28 [port="28", refresh="10"]	//свет кухня основной
+		Thing standard DimmerD0P27 			"детскаял" 			     @ "Свет"		 [port="27", refresh="10"]	//свет детская
+		Thing standard DimmerD0P28 			"кухня основной" 	     @ "Свет"		 [port="28", refresh="10"]	//свет кухня основной
  
 	}
 	
 	Bridge device megad16 "MegaD-2561_16" [hostname="192.168.0.16", password="sec"]{
-//		Thing standard megad_Hallway_light_out	"Свет в прихожей" @ "Свет"				[port="15", refresh="5"]
 
 		Thing standard inputD1P15 [port="15", refresh="10"]	//датчик движения кухня
 		Thing standard inputD1P16 [port="16", refresh="10"]	//датчик движения спальня
