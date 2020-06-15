@@ -7,10 +7,10 @@ Strategies {
 }
 
 Items {
-       Counterdds238 : strategy = everyChange 
+   //    Counterdds238 : strategy = everyChange 
        Dds2381KWh : strategy = everyMinute, restoreOnStartup
-       Dds238_hourcounter : strategy = everyChange, restoreOnStartup
-       Dds238_daycounter : strategy = everyChange, restoreOnStartup
+       Dds238_hourcounter : strategy = everyMinute, restoreOnStartup
+       Dds238_daycounter : strategy = everyMinute, restoreOnStartup
 	   
 	//   CounterWater : strategy = everyChange
 	//   WaterVolume : strategy = everyChange, everyHour, everyDay, restoreOnStartup

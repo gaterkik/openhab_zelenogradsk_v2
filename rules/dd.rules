@@ -11,7 +11,7 @@ when
 then
     IsItDark.postUpdate(OFF)
 	WeSleepBedroom.postUpdate(OFF)
-end
+	end
 //------------------------------------------------------------------------------------------
 
 rule "kitchen DD srabotal"
@@ -88,40 +88,30 @@ rule "bedroom DD srabotal"
 when
 	Item itemD1P16 changed to OFF // Сработал ДД
 then
-	val LocalTime evening = new LocalTime(23, 0)
-	if (itemD0P25.state as DecimalType > 0) // Свет включен
-		{
-			Bedroom_MotionTimer.sendCommand(ON) // Обнуляем таймер
-			logInfo("bedroom", "srabotal dd, no svet uze vklua4en. obnulyaem timer")
-		}
-		else // Свет выключен
-		{
-			if (DDBedRoomDisable.state == ON) // Включен выключатель ДД на сайте )
-				{
-					logInfo("bedroom", "srabotal dd, no vklu4ena blokirovka dd")
+	if (itemD0P25.state as DecimalType > 0) { // Свет включен
+		Bedroom_MotionTimer.sendCommand(ON)   // Обнуляем таймер
+		logInfo("bedroom", "srabotal dd, no svet uze vklua4en. obnulyaem timer")
+	}
+	else {  // Свет выключен
+		logInfo("bedroom", "srabotal dd. свет выключен")
+		if (DDBedRoomDisable.state == ON) {  // Включен выключатель ДД на сайте )
+				logInfo("bedroom", "srabotal dd, no vklu4ena blokirovka dd")
+			}
+		else { // Выключен выключатель ДД на сайте )
+			if (IsItDark.state == ON && WeSleepBedroom.state == ON){  // И темно и спим
+				sendCommand(itemD0P12, 20)
+				postUpdate(itemD0P12, 20)
+				logInfo("bedroom", "дд в спальне ночью - включаем в коридоре")
+				Corridor_MotionTimer.sendCommand(ON)
 				}
-			else // Выключен выключатель ДД на сайте )
-			{
-				if (IsItDark.state == ON && WeSleepBedroom == ON){  // И темно и спим
-					sendCommand(itemD0P12, 20)
-					postUpdate(itemD0P12, 20)
-					logInfo("bedroom", "дд в спальне ночью - включаем в коридоре")
-					Corridor_MotionTimer.sendCommand(ON)
-				}
-
-				
-				if (IsItDark.state == ON && WeSleepBedroom == OFF){  // Уже темно но ещё не спим
-					sendCommand(itemD0P25, 100)
-					postUpdate(itemD0P25, 100)
-					logInfo("bedroom", "дд в спальне вечером - vklu4aem svet v spal'ne")
-					Bedroom_MotionTimer.sendCommand(ON)
-				}
-
-				
-				
-			}	
-		}
-	
+			if (IsItDark.state == ON && WeSleepBedroom.state == OFF){  // Уже темно но ещё не спим
+				sendCommand(itemD0P25, 100)
+				postUpdate(itemD0P25, 100)
+				logInfo("bedroom", "дд в спальне вечером - vklu4aem svet v spal'ne")
+				Bedroom_MotionTimer.sendCommand(ON)
+				}			
+		}	
+	}	
 end
 
 rule "Turn off the light in Bedroom when the timer is off" 

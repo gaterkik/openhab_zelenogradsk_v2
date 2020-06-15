@@ -117,7 +117,6 @@ sitemap default label="квартира"{
 		}
 	}
 	Frame label="Отладка" {		
-        Text item=test
 		Switch item=itemPHP1
 		Switch item=itemPHP2
 		Switch item=itemPHP3
