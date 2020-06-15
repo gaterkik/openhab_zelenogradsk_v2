@@ -54,21 +54,27 @@ rule "bathroom DD srabotal"
 when
 	Item itemD1P18 changed to OFF
 then
-	if (itemD0P13.state as DecimalType > 0)
-		{
-			Bathroom_MotionTimer.sendCommand(ON)
-			logInfo("bathroom", "srabotal dd, no svet uze vklua4en. obnulyaem timer")
+	if (itemD0P13.state as DecimalType > 0){
+		Bathroom_MotionTimer.sendCommand(ON)
+		logInfo("bathroom", "srabotal dd, no svet uze vklua4en. obnulyaem timer")
+	}
+	else{		
+		if (WeSleepBedroom.state == ON){
+			sendCommand(itemD0P13, 20)
+			postUpdate(itemD0P13, 20)	
+			Bathroom_MotionTimer.sendCommand(ON)	
+			logInfo("bathroom", "vkluchaem svet v vannoi po dd s rejimom WeSleep")
 		}
-		else
-		{
-			
-			logInfo("bathroom", "vkluchaem svet v vannoi po dd")
+		else {
 			sendCommand(itemD0P13, 100)
 			postUpdate(itemD0P13, 100)
 			sendCommand(itemD0P26, ON)
 			postUpdate(itemD0P26, ON)
 			Bathroom_MotionTimer.sendCommand(ON)	
-		}	
+			logInfo("bathroom", "vkluchaem svet v vannoi po dd bez WeSleep")
+		}
+		
+	}	
 end
 
 rule "Turn off the light in Bathroom when the timer is off" 
