@@ -11,6 +11,7 @@ when
 then
     IsItDark.postUpdate(OFF)
 	WeSleepBedroom.postUpdate(OFF)
+	WeSleepChildrensroom.postUpdate(OFF)
 	end
 //------------------------------------------------------------------------------------------
 
