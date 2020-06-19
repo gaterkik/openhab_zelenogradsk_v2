@@ -16,40 +16,54 @@ then
 	FullLightKitchen.postUpdate(OFF)
 	end
 //------------------------------------------------------------------------------------------
-
+//------------------------------------------------------------------------------------------
 rule "kitchen DD srabotal"
 when
-	Item itemD1P15 changed to OFF
+	Item itemD1P15 changed to OFF // Сработал ДД
 then
-	if (itemD0P28.state as DecimalType > 0)
-		{
+	if (itemD0P28.state as DecimalType > 0 || itemD0P10.state as DecimalType > 0 || itemKitchenCountertop.state == ON) { // Свет включен
+		Kitchen_MotionTimer.sendCommand(ON)   // Обнуляем таймер
+	}
+	else {  // Свет выключен
+		if (IsItDark.state == OFF){  // Светло
+			sendCommand(itemKitchenCountertop, ON)
+			postUpdate(itemKitchenCountertop, ON)
 			Kitchen_MotionTimer.sendCommand(ON)
-			logInfo("kitchen", "srabotal dd, no svet uze vklua4en. obnulyaem timer")
-		}
-		else
-		{			
-			if (DDKitchenDisable.state == ON)
-				{
-					logInfo("kitchen", "srabotal dd, no vkluchena blokirovka dd")
-				}
-			else
-				{
-				logInfo("kitchen", "vkluchaem svet v kuhne po dd")
-				sendCommand(itemD0P28, 100)
-				postUpdate(itemD0P28, 100)
-				Kitchen_MotionTimer.sendCommand(ON)	
-				}
-		}
+			}
+		if (IsItDark.state == ON && FullLightKitchen.state == OFF){  // Уже темно и не вечерний режим
+			sendCommand(itemKitchenCountertop, ON)
+			postUpdate(itemKitchenCountertop, ON)
+			sendCommand(itemD0P28, 100)
+			postUpdate(itemD0P28, 100)
+			Kitchen_MotionTimer.sendCommand(ON)
+			}
+		if (IsItDark.state == ON && FullLightKitchen.state == ON){  // Уже темно и вечерний режим
+			sendCommand(itemKitchenCountertop, ON)
+			postUpdate(itemKitchenCountertop, ON)
+			Kitchen_MotionTimer.sendCommand(ON)
+			}
+		if (WeSleepBedroom.state == ON){  // Включен режим сна в спальне
+			sendCommand(itemKitchenCountertop, ON)
+			postUpdate(itemKitchenCountertop, ON)
+			Kitchen_MotionTimer.sendCommand(ON)
+			}	
+	}	
 end
 
-rule "Turn off the light in Kitchen when the timer is off" 
+rule "Turn off the light in childrenroom when the timer is off" 
 when        
     Item Kitchen_MotionTimer received command OFF 
 then     
-	logInfo("kitchen", "vikluchaem svet v kuhne po taimeru")    
-	sendCommand(itemD0P28, 0)
-	postUpdate(itemD0P28, 0)
+	sendCommand(itemD0P27, 0)
+	postUpdate(itemD0P27, 0)
+	sendCommand(itemD0P10, 0)
+	postUpdate(itemD0P10, 0)
+	sendCommand(itemKitchenCountertop, OFF)
+	postUpdate(itemKitchenCountertop, OFF)
+
 end
+
+//------------------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------------------
 
