@@ -1,6 +1,8 @@
 var int Timeout
 var int Timeout1
 var int Timeout2
+var int Timeout3
+
 //------------------------------------------------------------------------
 // obrabotka nazatiya viklyuchatelya v koridore. men'she sekundi - vkluchaem/vikluchaem. bol'she sekundi - vikluchaem svet vo vsei kvartire
 
@@ -109,6 +111,44 @@ result2 = result2 / 1000
  	  } 
 end
 
+//------------------------------------------------------------------------
+// Обработка нажатия выключателя в кухне дальнего от двери. Меньше секунды просто переключение, дольше секунды - режим вечерний
+
+rule "kitchen start timer"
+when Item itemD0P5 changed to ON then
+ Timeout3 = now.getMillisOfDay
+ logInfo("StartTime", Timeout3.toString)
+end
+
+rule "kitchen stop timer"
+when Item itemD0P5 changed to OFF then
+var int Stop2 = now.getMillisOfDay
+logInfo("StopTime", Stop2.toString)
+var int result2 = Stop2 - Timeout3
+result2 = result2 / 1000
+
+ if (result2 <= 1) {
+ 	logInfo("Timer 1 second ", result2.toString)
+ 	if (itemD0P28.state as DecimalType > 0){
+        sendCommand(itemD0P28, 0)
+		postUpdate(itemD0P28, 0) 
+		logInfo("vklu4eno -> viklu4aem", result2.toString)
+    } else {
+		sendCommand(itemD0P28, 100)
+		postUpdate(itemD0P28, 100)
+		logInfo("viklu4en -> vklu4aem", result2.toString)
+    }
+ }
+ else if (result2 > 1){
+		if FullLightKitchen.state  == OFF{
+			postUpdate(FullLightKitchen, ON)
+		}
+		if FullLightKitchen.state == ON{
+			postUpdate(FullLightKitchen, OFF)
+		}
+ 	  } 
+end
+
 
 //--------------------------------------------------
 rule "0" //нажали выключатель ванная 1  
@@ -202,6 +242,7 @@ then
 end
 
 //--------------------------------------------------
+/*
 rule "5" //нажали выключатель кухня 2
 when
 		Item itemD0P5 changed to ON
@@ -218,6 +259,7 @@ then
 		}
 		logInfo("kitchen", "нажали выключатель 1")
 end
+*/
 //--------------------------------------------------
 rule "15" //нажали выключатель детская 1
 when

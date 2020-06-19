@@ -3,6 +3,7 @@ when
     Channel 'astro:sun:home:set#event' triggered START
 then
     IsItDark.postUpdate(ON)
+	FullLightKitchen.postUpdate(ON)
 end
 
 rule "Sunrise"
@@ -12,6 +13,7 @@ then
     IsItDark.postUpdate(OFF)
 	WeSleepBedroom.postUpdate(OFF)
 	WeSleepChildrensroom.postUpdate(OFF)
+	FullLightKitchen.postUpdate(OFF)
 	end
 //------------------------------------------------------------------------------------------
 

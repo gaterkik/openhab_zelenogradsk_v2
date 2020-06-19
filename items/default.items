@@ -33,6 +33,7 @@ Switch DDKitchenDisable "Кухня. Отключение датчика дви�
 
 Switch WeSleepBedroom "Спальня. Ночной режим"
 Switch WeSleepChildrensroom "Детская. Ночной режим"
+Switch FullLightKitchen "Кухня. Вечерний режим"
 
 
 Color LR_LEDLight_Color "Рабочая поверхность"

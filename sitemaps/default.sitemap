@@ -7,6 +7,7 @@ sitemap default label="квартира"{
                 Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность"
 				Colorpicker item=LR_LEDLight_Color
 				Switch item=DDKitchenDisable label="Отключить датчик движения" icon="motion"
+				Switch item=FullLightKitchen
 			}
 			Frame label="Отопление" {	
 				Switch item=itemD0P9 label="Тёплый пол" icon="radiator" mappings=[ON="off", OFF="on"]
