@@ -142,8 +142,7 @@ result2 = result2 / 1000
  else if (result2 > 1){
 		if (FullLightKitchen.state  == OFF){
 			postUpdate(FullLightKitchen, ON)
-		}
-		if (FullLightKitchen.state == ON){
+		} else {
 			postUpdate(FullLightKitchen, OFF)
 		}
  	  } 
