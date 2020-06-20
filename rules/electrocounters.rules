@@ -45,10 +45,3 @@ then
         var day = Dds2381KWh.state as DecimalType - Dds2381KWh.historicState(now.minusDays(1)).state as DecimalType
         postUpdate(Dds238_daycounter, day)
 end
-
-rule "5min"
-when
-	Time cron "0 */5 * * * ?"
-then
-	postUpdate(test, Dds2381KWh.state)
-end
