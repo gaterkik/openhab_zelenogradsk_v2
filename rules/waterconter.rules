@@ -1,5 +1,5 @@
 // Начальная настройка показаний 
-
+/*
 
 rule "WaterCounterUpdate"
 when
@@ -7,10 +7,10 @@ when
 then
 	postUpdate(WaterVolume, 27.858)
 	postUpdate(WaterLiters, 27858)
-//	Корректировка 31.07.2019
+//	Корректировка 20.06.2020
 end 
 
-
+*/
 
 
 

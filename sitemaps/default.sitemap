@@ -118,14 +118,14 @@ sitemap default label="квартира"{
 		}
 		Group item=itemD0P0 label="Холодное водоснабжение" icon="pie"{
 			Frame label="Холодное водоснабжение"{
-				Text item = CounterWater
-				Text item = WaterLiters
-				Text item = WaterVolume
-				Text item = Water_hourcounter 
-				Text item = Water_daycounter 
-				Chart item = WaterVolume  label="kbm" refresh=5000 period=24h legend=true
-				Chart item = Water_hourcounter   refresh=50000 period=24h legend=true
-				Chart item = Water_daycounter   refresh=50000 period=W legend=true
+				Text item=CounterWater
+				Text item=WaterLiters
+				Text item=WaterVolume
+				Text item=Water_hourcounter 
+				Text item=Water_daycounter 
+				Chart item=WaterVolume  label="kbm" refresh=5000 period=24h legend=true
+				Chart item=Water_hourcounter   refresh=50000 period=24h legend=true
+				Chart item=Water_daycounter   refresh=50000 period=W legend=true
 			}
 		}
 	}
