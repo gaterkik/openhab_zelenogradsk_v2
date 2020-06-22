@@ -70,6 +70,7 @@ result1 = result1 / 1000
 		sendCommand(itemD0P25, 0)
 		postUpdate(itemD0P25, 0)
 		postUpdate(WeSleepBedroom, ON)
+		postUpdate(FullLightKitchen, OFF)
 		logInfo("Timer > 1 sec", result1.toString)
  	  } 
 end
