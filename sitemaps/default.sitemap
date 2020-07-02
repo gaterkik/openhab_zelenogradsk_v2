@@ -66,7 +66,7 @@ sitemap default label="квартира"{
 		
 	}
 	Frame label="Освещение" {
-    	Switch item=itemD0P11 label="Коридор 1"// icon="lightbulb"
+    	Switch item=itemD0P11 label="Коридор 1" icon="light"
 		Slider item=itemD0P10 label="Стол"
 		Slider item=itemD0P12 label="Коридор 2"
 		Slider item=itemD0P13 label="Ванна"
@@ -75,7 +75,7 @@ sitemap default label="квартира"{
 		Slider item=itemD0P28 label="Кухня"
 		Colorpicker item=LR_LEDLight_Color label="RGB подсветка кухни"
 		Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность кухни"
-		Slider item=itemD1P27 label="Лождия"
+		Switch item=itemD1P27 label="Лождия" icon="light"
 	}
 	Frame label="Отопление" {	
 		Switch item=itemD0P7 label="Тёплый пол туалет" icon="radiator" mappings=[ON="off", OFF="on"]
