@@ -70,7 +70,6 @@ result1 = result1 / 1000
 		sendCommand(itemD0P25, 0)
 		postUpdate(itemD0P25, 0)
 		postUpdate(WeSleepBedroom, ON)
-		postUpdate(FullLightKitchen, OFF)
 		logInfo("Timer > 1 sec", result1.toString)
  	  } 
 end
@@ -143,7 +142,8 @@ result2 = result2 / 1000
  else if (result2 > 1){
 		if (FullLightKitchen.state  == OFF){
 			postUpdate(FullLightKitchen, ON)
-		} else {
+		}
+		if (FullLightKitchen.state == ON){
 			postUpdate(FullLightKitchen, OFF)
 		}
  	  } 

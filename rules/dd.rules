@@ -30,14 +30,14 @@ then
 			postUpdate(itemKitchenCountertop, ON)
 			Kitchen_MotionTimer.sendCommand(ON)
 			}
-		if (IsItDark.state == ON && FullLightKitchen.state == ON){  // Уже темно и не вечерний режим
+		if (IsItDark.state == ON && FullLightKitchen.state == OFF){  // Уже темно и не вечерний режим
 			sendCommand(itemKitchenCountertop, ON)
 			postUpdate(itemKitchenCountertop, ON)
 			sendCommand(itemD0P28, 100)
 			postUpdate(itemD0P28, 100)
 			Kitchen_MotionTimer.sendCommand(ON)
 			}
-		if (IsItDark.state == ON && FullLightKitchen.state == OFF){  // Уже темно и вечерний режим
+		if (IsItDark.state == ON && FullLightKitchen.state == ON){  // Уже темно и вечерний режим
 			sendCommand(itemKitchenCountertop, ON)
 			postUpdate(itemKitchenCountertop, ON)
 			Kitchen_MotionTimer.sendCommand(ON)
