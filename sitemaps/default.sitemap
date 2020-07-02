@@ -124,7 +124,8 @@ sitemap default label="квартира"{
 				Text item=WaterVolume
 				Text item=Water_hourcounter 
 				Text item=Water_daycounter 
-				Chart item=WaterVolume  label="kbm" refresh=5000 period=24h legend=true
+				Chart item=WaterVolume  label="kbm" refresh=5000 period=24h legend=true 
+				Chart item=WaterLiters refresh=5000 period=24h legend=true
 				Chart item=Water_hourcounter   refresh=50000 period=24h legend=true
 				Chart item=Water_daycounter   refresh=50000 period=W legend=true
 			}
