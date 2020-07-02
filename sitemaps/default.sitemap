@@ -75,6 +75,7 @@ sitemap default label="квартира"{
 		Slider item=itemD0P28 label="Кухня"
 		Colorpicker item=LR_LEDLight_Color label="RGB подсветка кухни"
 		Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность кухни"
+		Slider item=itemD1P27 label="Лождия"
 	}
 	Frame label="Отопление" {	
 		Switch item=itemD0P7 label="Тёплый пол туалет" icon="radiator" mappings=[ON="off", OFF="on"]

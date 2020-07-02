@@ -82,8 +82,11 @@ Dimmer  itemD0P27 "out" (GF_Corridor) [ "Lighting" ] { channel = "megad:standard
 Dimmer  itemD0P28 "out" (GF_Corridor) [ "Lighting" ] { channel = "megad:standard:incoming:megad15:DimmerD0P28:dimmer" }
 
 // ВТОРАЯ МЕГА
+//выходы реле
 Switch itemD1P28 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad16:outputD1P28:out" } //перекрытие воды
-
+Switch itemD1P27 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad16:outputD1P27:out" } //свет лоджия
+Switch itemD1P26 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad16:outputD1P26:out" } //ТП лоджия
+//входы
 Switch itemD1P15 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad16:inputD1P15:in" }
 Switch itemD1P16 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad16:inputD1P16:in" }
 Switch itemD1P17 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad16:inputD1P17:in" }

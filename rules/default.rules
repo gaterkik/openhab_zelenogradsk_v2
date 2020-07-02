@@ -189,23 +189,21 @@ then
 		}
 end
 //--------------------------------------------------
-/*
-rule "2" //нажали выключатель коридор 1
+rule "2" //нажали выключатель лоджия
 when
-		Item itemD0P2 changed to ON
+		Item itemD0P6 changed to ON
 then
-		if (itemD0P11.state == ON)
+		if (itemD1P27.state == ON)
 		{
-			sendCommand(itemD0P11, OFF)
-			postUpdate(itemD0P11, OFF)
+			sendCommand(itemD1P27, OFF)
+			postUpdate(itemD1P27, OFF)
 		}
 		else
 		{
-			sendCommand(itemD0P11, ON)
-			postUpdate(itemD0P11, ON)
+			sendCommand(itemD1P27, ON)
+			postUpdate(itemD1P27, ON)
 		}
 end
-*/
 //--------------------------------------------------
 rule "3" //нажали выключатель коридор 2
 when
@@ -242,25 +240,7 @@ then
 end
 
 //--------------------------------------------------
-/*
-rule "5" //нажали выключатель кухня 2
-when
-		Item itemD0P5 changed to ON
-then
-		if (itemD0P28.state as DecimalType > 0)
-		{
-			sendCommand(itemD0P28, 0)
-			postUpdate(itemD0P28, 0)
-		}
-		else
-		{
-			sendCommand(itemD0P28, 100)
-			postUpdate(itemD0P28, 100)
-		}
-		logInfo("kitchen", "нажали выключатель 1")
-end
-*/
-//--------------------------------------------------
+
 rule "15" //нажали выключатель детская 1
 when
 		Item itemD0P15 changed to ON
@@ -276,24 +256,7 @@ then
 			postUpdate(itemD0P27, 100)
 		}
 end
-//--------------------------------------------------
-/*
-rule "16" //нажали выключатель детская 2
-when
-		Item itemD0P16 changed to ON
-then
-		if (itemD0P27.state as DecimalType > 0)
-		{
-			sendCommand(itemD0P27, 0)
-			postUpdate(itemD0P27, 0)
-		}
-		else
-		{
-			sendCommand(itemD0P27, 100)
-			postUpdate(itemD0P27, 100)
-		}
-end
-*/
+
 //--------------------------------------------------
 rule "17" //нажали выключатель спальня 1
 when
@@ -310,24 +273,7 @@ then
 			postUpdate(itemD0P25, 100)
 		}
 end
-//--------------------------------------------------
-/*
-rule "18" //нажали выключатель спальня 2
-when
-		Item itemD0P18 changed to ON
-then
-		if (itemD0P25.state as DecimalType > 0)
-		{
-			sendCommand(itemD0P25, 0)
-			postUpdate(itemD0P25, 0)
-		}
-		else
-		{
-			sendCommand(itemD0P25, 100)
-			postUpdate(itemD0P25, 100)
-		}
-end
-*/
+
 //--------------------------------------------------
 rule "alloff" //выключаем всё
 when
@@ -356,6 +302,9 @@ then
 		
 		sendCommand(itemD0P28, 0)
 		postUpdate(itemD0P28, 0)
+
+		sendCommand(itemD1P27, OFF)
+		postUpdate(itemD1P27, OFF)
 		
 		sendCommand(itemKitchenCountertop, OFF)
 		postUpdate(itemKitchenCountertop, OFF)
