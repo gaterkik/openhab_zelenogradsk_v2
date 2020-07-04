@@ -56,6 +56,7 @@ Switch itemD0P2 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:
 Switch itemD0P3 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P3:in" }
 Switch itemD0P4 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P4:in" }
 Switch itemD0P5 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P5:in" }
+Switch itemD0P6 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P6:in" }
 Switch itemD0P15 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P15:in" }
 Switch itemD0P16 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P16:in" }
 Switch itemD0P17 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P17:in" }
