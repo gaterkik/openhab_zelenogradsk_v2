@@ -142,9 +142,13 @@ result2 = result2 / 1000
  else if (result2 > 1){
 		if (FullLightKitchen.state  == OFF){
 			postUpdate(FullLightKitchen, ON)
+			sendCommand(itemD0P28, 100)
+			postUpdate(itemD0P28, 100)
 		}
 		if (FullLightKitchen.state == ON){
 			postUpdate(FullLightKitchen, OFF)
+			sendCommand(itemD0P28, 0)
+			postUpdate(itemD0P28, 0) 
 		}
  	  } 
 end
