@@ -132,11 +132,11 @@ result2 = result2 / 1000
  	if (itemD0P28.state as DecimalType > 0){
         sendCommand(itemD0P28, 0)
 		postUpdate(itemD0P28, 0) 
-		logInfo("vklu4eno -> viklu4aem", result2.toString)
+		logInfo("kitchen", result2.toString)
     } else {
 		sendCommand(itemD0P28, 100)
 		postUpdate(itemD0P28, 100)
-		logInfo("viklu4en -> vklu4aem", result2.toString)
+		logInfo("kitchen", result2.toString)
     }
  }
  else if (result2 > 1){
@@ -144,11 +144,13 @@ result2 = result2 / 1000
 			postUpdate(FullLightKitchen, ON)
 			sendCommand(itemD0P28, 100)
 			postUpdate(itemD0P28, 100)
+			logInfo("kitchen", "FullLightKitchen ON")
 		}
 		if (FullLightKitchen.state == ON){
 			postUpdate(FullLightKitchen, OFF)
 			sendCommand(itemD0P28, 0)
 			postUpdate(itemD0P28, 0) 
+			logInfo("kitchen", "FullLightKitchen OFF")
 		}
  	  } 
 end
