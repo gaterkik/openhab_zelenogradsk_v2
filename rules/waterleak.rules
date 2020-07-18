@@ -1,0 +1,17 @@
+rule "kitchen water leak" 
+when
+		Item itemD1P20 changed to ON
+then
+		sendCommand(itemD1P28, ON)
+		postUpdate(itemD1P28, ON)
+        sendBroadcastNotification("ПОТОП КУХНЯ!")
+end
+
+rule "bathroom water leak" 
+when
+		Item itemD0P20 changed to ON
+then
+		sendCommand(itemD1P28, ON)
+		postUpdate(itemD1P28, ON)
+        sendBroadcastNotification("ПОТОП ВАННАЯ!")
+end

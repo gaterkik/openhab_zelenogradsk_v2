@@ -61,6 +61,7 @@ Switch itemD0P15 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15
 Switch itemD0P16 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P16:in" }
 Switch itemD0P17 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P17:in" }
 Switch itemD0P18 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P18:in" }
+Switch itemD0P20 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P20:in" }
 
 //выходы реле
 Switch itemD0P7 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad15:outputD0P7:out" }
@@ -69,8 +70,6 @@ Switch itemD0P9 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard
 Switch itemD0P22 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad15:outputD0P22:out" }
 Switch itemD0P23 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad15:outputD0P23:out" }
 Switch itemD0P24 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad15:outputD0P24:out" }
-
-
 Switch itemD0P11 "out" (GF_Corridor) [ "Lighting" ] { channel = "megad:standard:incoming:megad15:outputD0P11:out" }
 Switch itemD0P26 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad15:outputD0P26:out" }
 
@@ -93,3 +92,4 @@ Switch itemD1P16 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad16
 Switch itemD1P17 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad16:inputD1P17:in" }
 Switch itemD1P18 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad16:inputD1P18:in" }
 Switch itemD1P19 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad16:inputD1P19:in" }
+Switch itemD1P20 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad16:inputD1P20:in" }
