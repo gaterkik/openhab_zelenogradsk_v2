@@ -101,6 +101,7 @@ sitemap default label="квартира"{
             }
             Frame label="Погода" {
                 Text label="not ready" icon="sun_clouds"
+		
             }
 
 		}
