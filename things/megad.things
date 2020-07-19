@@ -34,11 +34,11 @@ Bridge megad:tcp:incoming "Мост для входящих на порту 8989
 	
 	Bridge device megad16 "MegaD-2561_16" [hostname="192.168.0.16", password="sec"]{
 
-		Thing standard inputD1P15  "датчик движения кухня"   				 [port="15", refresh="10"]	//датчик движения кухня
-		Thing standard inputD1P16  "датчик движения спальня"				 [port="16", refresh="10"]	//датчик движения спальня
-		Thing standard inputD1P17  "датчик движения детская"				 [port="17", refresh="10"]	//датчик движения детская
-		Thing standard inputD1P18  "датчик движения ванная" 				 [port="18", refresh="10"]	//датчик движения ванная
-		Thing standard inputD1P19  "датчик движения вход" 					 [port="19", refresh="10"]	//датчик движения вход
+		Thing standard inputD1P15  "датчик движения кухня"   @ "ДД"			 [port="15", refresh="10"]	//датчик движения кухня
+		Thing standard inputD1P16  "датчик движения спальня" @ "ДД"			 [port="16", refresh="10"]	//датчик движения спальня
+		Thing standard inputD1P17  "датчик движения детская" @ "ДД"			 [port="17", refresh="10"]	//датчик движения детская
+		Thing standard inputD1P18  "датчик движения ванная"  @ "ДД"			 [port="18", refresh="10"]	//датчик движения ванная
+		Thing standard inputD1P19  "датчик движения вход" 	 @ "ДД"			 [port="19", refresh="10"]	//датчик движения вход
 		Thing standard inputD1P20  "протечка воды кухня"	 @ "Выключатели" [port="20", refresh="10"]	
 		Thing standard outputD1P26 "тёплый пол лоджия" 		 @ "Отопление" 	 [port="26", refresh="10"]	//тёплый пол лоджия
 		Thing standard outputD1P27 "свет лоджия" 	 		 @ "Свет"		 [port="27", refresh="10"]	//свет лоджия
