@@ -17,7 +17,7 @@ Number test "тест0"
 
 Switch itemAllOff "Тушим свет"
 
-Switch itemKitchenCountertop "Рабочая поверхность"
+//Switch itemKitchenCountertop "Рабочая поверхность"
 
 
 Switch  Bathroom_MotionTimer {expire="15m,command=OFF"}

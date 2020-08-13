@@ -324,8 +324,8 @@ then
 		sendCommand(itemD1P27, OFF)
 		postUpdate(itemD1P27, OFF)
 		
-		sendCommand(itemKitchenCountertop, OFF)
-		postUpdate(itemKitchenCountertop, OFF)
+		sendCommand(LR_LEDLight_Color, OFF)
+		postUpdate(LR_LEDLight_Color, OFF)
 		sendHttpGetRequest("http://192.168.0.15/sec/?pt=35&ws=000000")
 		
 		

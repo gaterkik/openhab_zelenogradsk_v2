@@ -21,45 +21,45 @@ rule "kitchen DD srabotal"
 when
 	Item itemD1P15 changed to OFF // Сработал ДД
 then
-	if (itemD0P28.state as DecimalType > 0 || itemD0P10.state as DecimalType > 0 || itemKitchenCountertop.state == ON) { // Свет включен
+	if (itemD0P28.state as DecimalType > 0 || itemD0P10.state as DecimalType > 0 || LR_LEDLight_Color.state == ON) { // Свет включен
 		Kitchen_MotionTimer.sendCommand(ON)   // Обнуляем таймер
 	}
 	else {  // Свет выключен
 		if (IsItDark.state == OFF){  // Светло
-			sendCommand(itemKitchenCountertop, ON)
-			postUpdate(itemKitchenCountertop, ON)
+			sendCommand(LR_LEDLight_Color, ON)
+			postUpdate(LR_LEDLight_Color, ON)
 			Kitchen_MotionTimer.sendCommand(ON)
 			}
 		if (IsItDark.state == ON && FullLightKitchen.state == ON){  // Уже темно и не вечерний режим
-			sendCommand(itemKitchenCountertop, ON)
-			postUpdate(itemKitchenCountertop, ON)
+			sendCommand(LR_LEDLight_Color, ON)
+			postUpdate(LR_LEDLight_Color, ON)
 			sendCommand(itemD0P28, 100)
 			postUpdate(itemD0P28, 100)
 			Kitchen_MotionTimer.sendCommand(ON)
 			}
 		if (IsItDark.state == ON && FullLightKitchen.state == OFF){  // Уже темно и вечерний режим
-			sendCommand(itemKitchenCountertop, ON)
-			postUpdate(itemKitchenCountertop, ON)
+			sendCommand(LR_LEDLight_Color, ON)
+			postUpdate(LR_LEDLight_Color, ON)
 			Kitchen_MotionTimer.sendCommand(ON)
 			}
 		if (WeSleepBedroom.state == ON){  // Включен режим сна в спальне
-			sendCommand(itemKitchenCountertop, ON)
-			postUpdate(itemKitchenCountertop, ON)
+			sendCommand(LR_LEDLight_Color, ON)
+			postUpdate(LR_LEDLight_Color, ON)
 			Kitchen_MotionTimer.sendCommand(ON)
 			}	
 	}	
 end
 
-rule "Turn off the light in childrenroom when the timer is off" 
+rule "Turn off the light in kitchen when the timer is off" 
 when        
     Item Kitchen_MotionTimer received command OFF 
 then     
-	sendCommand(itemD0P27, 0)
-	postUpdate(itemD0P27, 0)
+	sendCommand(itemD0P28, 0)
+	postUpdate(itemD0P28, 0)
 	sendCommand(itemD0P10, 0)
 	postUpdate(itemD0P10, 0)
-	sendCommand(itemKitchenCountertop, OFF)
-	postUpdate(itemKitchenCountertop, OFF)
+	sendCommand(LR_LEDLight_Color, OFF)
+	postUpdate(LR_LEDLight_Color, OFF)
 
 end
 

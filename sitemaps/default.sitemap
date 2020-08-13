@@ -4,7 +4,7 @@ sitemap default label="квартира"{
 			Frame label="Освещение" {
 				Slider item=itemD0P10 label="Стол"
 				Slider item=itemD0P28 label="Основной"
-                Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность"
+                //Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность"
 				Colorpicker item=LR_LEDLight_Color
 				Switch item=DDKitchenDisable label="Отключить датчик движения" icon="motion"
 				Switch item=FullLightKitchen
@@ -74,7 +74,6 @@ sitemap default label="квартира"{
 		Slider item=itemD0P27 label="Детская"
 		Slider item=itemD0P28 label="Кухня"
 		Colorpicker item=LR_LEDLight_Color label="RGB подсветка кухни"
-		Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность кухни"
 		Switch item=itemD1P27 label="Лождия" icon="light"
 	}
 	Frame label="Отопление" {	
@@ -88,7 +87,6 @@ sitemap default label="квартира"{
 	Frame {
 		Group item=Current_DateTime label="Weather and Astro [%1$tA, %1$td.%1$tm.%1$tY]" icon="sun_clouds" {
 			Frame label="Сейчас" {
-                //Switch item=Night_State label="Phase of Day" mappings=[OFF="Tag", ON="Nacht"]
                 Text item=Day_Phase icon="sunmoon"
                 Text item=Sunrise_Time icon="sunrise"
                 Text item=Sunset_Time icon="sunset"
@@ -131,17 +129,5 @@ sitemap default label="квартира"{
 				Chart item=Water_daycounter   refresh=50000 period=W legend=true
 			}
 		}
-	}
-	Frame label="Отладка" {		
-		Switch item=itemPHP1
-		Switch item=itemPHP2
-		Switch item=itemPHP3
-		Switch item=itemPHP4
-		Switch item=itemPHP5
-		Switch item=itemPHP6
-		Switch item=itemPHP7
-
-		
-
 	}
 }

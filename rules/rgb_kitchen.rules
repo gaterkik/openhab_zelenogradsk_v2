@@ -70,31 +70,4 @@ then
    GRBvalues= greenValueHexStringFull + redValueHexStringFull + blueValueHexStringFull
 
    sendHttpGetRequest("http://192.168.0.15/sec/?pt=35&ws="+GRBvalues)
-/*
-   if (GRBvalues == "000000")
-   {
-		sendCommand(itemKitchenCountertop, OFF)
-   }
-   else
-   {
-		sendCommand(itemKitchenCountertop, ON)
-   }
-   
-   logInfo( "LR_LEDLight_Color", GRBvalues )
-*/
-end
-
-rule "ONOFF Kitchen Countertop"
-
-when
-   Item itemKitchenCountertop changed 
-then
-   if (itemKitchenCountertop.state == ON)
-   {
-      sendHttpGetRequest("http://192.168.0.15/sec/?pt=35&ws=FFFFFF")
-   }
-   else
-   {
-      sendHttpGetRequest("http://192.168.0.15/sec/?pt=35&ws=000000")
-   }
 end

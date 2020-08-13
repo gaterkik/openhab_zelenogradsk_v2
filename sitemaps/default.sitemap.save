@@ -1,0 +1,146 @@
+sitemap default label="квартира"{
+	Frame {
+		Group item=itemD0P10 label="Кухня" icon="kitchen"{
+			Frame label="Освещение" {
+				Slider item=itemD0P10 label="Стол"
+				Slider item=itemD0P28 label="Основной"
+                Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность"
+				Colorpicker item=LR_LEDLight_Color
+				Switch item=DDKitchenDisable label="Отключить датчик движения" icon="motion"
+				Switch item=FullLightKitchen
+			}
+			Frame label="Отопление" {	
+				Switch item=itemD0P9 label="Тёплый пол" icon="radiator" mappings=[ON="off", OFF="on"]
+				Switch item=itemD0P22 label="Радиатор" icon="radiator" mappings=[ON="off", OFF="on"]
+			}		
+		}	
+		Group item=itemD0P10 label="Ванна"icon="bath"{
+			Frame label="Освещение" {
+				Slider item=itemD0P13 label="Основной"
+			}	
+			Frame label="Отопление" {	
+				Switch item=itemD0P7 label="Тёплый пол" icon="radiator" mappings=[ON="off", OFF="on"]
+			}
+			Frame label="Вентиляция" {
+				Switch item=itemD0P26 label="Вытяжка" icon="fan"
+			}
+			Frame label="Система защиты от протечек" {
+				Switch item=itemD1P28 label="Перекрытие воды" icon="faucet"
+			}
+		}
+		Group item=itemD0P10 label="Спальня" icon="bedroom"{
+			Frame label="Освещение" {
+				Slider item=itemD0P25 label="Основной"
+				Switch item=DDBedRoomDisable label="Отключить датчик движения" icon="motion"
+				Switch item=WeSleepBedroom label="Режим сна"
+			}	
+			Frame label="Отопление" {	
+				Switch item=itemD0P24 label="Радиатор" icon="radiator" mappings=[ON="off", OFF="on"]
+			}
+		}
+		Group item=itemD0P10 label="Детская" icon="boy_2"{
+			Frame label="Освещение" {
+				Slider item=itemD0P27 label="Основной"
+				Switch item=WeSleepChildrensroom label="Режим сна"
+			}
+			Frame label="Отопление" {	
+				Switch item=itemD0P23 label="Радиатор" icon="radiator" mappings=[ON="off", OFF="on"]
+			}
+		}
+		Group item=itemD0P10 label="Коридор" icon="corridor"{
+			Frame label="Освещение" {
+				Switch item=itemD0P11 label="Коридор 1" icon="lightbulb"
+				Slider item=itemD0P12 label="Коридор 2"
+			}	
+			Frame item=itemD0P10 label="Отопление [%.1f °C]" {	
+				Switch item=itemD0P8 label="Тёплый пол" icon="radiator" mappings=[ON="off", OFF="on"]
+			}
+		}	
+	}
+	Frame {
+		Switch item=itemAllOff label="Тушим весь свет" 
+		Switch item=itemD0P26 label="Вытяжка" icon="fan"
+		Switch item=itemD1P28 label="Перекрытие воды" icon="faucet"
+		//Switch item=DDBedRoomDisable
+		//Switch item=DDKitchenDisable
+		
+	}
+	Frame label="Освещение" {
+    	Switch item=itemD0P11 label="Коридор 1" icon="light"
+		Slider item=itemD0P10 label="Стол"
+		Slider item=itemD0P12 label="Коридор 2"
+		Slider item=itemD0P13 label="Ванна"
+		Slider item=itemD0P25 label="Спальня"
+		Slider item=itemD0P27 label="Детская"
+		Slider item=itemD0P28 label="Кухня"
+		Colorpicker item=LR_LEDLight_Color label="RGB подсветка кухни"
+		Switch item=itemKitchenCountertop icon="light" label="Рабочая поверхность кухни"
+		Switch item=itemD1P27 label="Лождия" icon="light"
+	}
+	Frame label="Отопление" {	
+		Switch item=itemD0P7 label="Тёплый пол туалет" icon="radiator" mappings=[ON="off", OFF="on"]
+		Switch item=itemD0P8 label="Тёплый пол коридор" icon="radiator" mappings=[ON="off", OFF="on"]
+		Switch item=itemD0P9 label="Тёплый пол кухня" icon="radiator" mappings=[ON="off", OFF="on"]
+		Switch item=itemD0P22 label="Радиатор кухня" icon="radiator" mappings=[ON="off", OFF="on"]
+		Switch item=itemD0P23 label="Радиатор детская" icon="radiator" mappings=[ON="off", OFF="on"]
+		Switch item=itemD0P24 label="Радиатор спальня" icon="radiator" mappings=[ON="off", OFF="on"]
+	}
+	Frame {
+		Group item=Current_DateTime label="Weather and Astro [%1$tA, %1$td.%1$tm.%1$tY]" icon="sun_clouds" {
+			Frame label="Сейчас" {
+                //Switch item=Night_State label="Phase of Day" mappings=[OFF="Tag", ON="Nacht"]
+                Text item=Day_Phase icon="sunmoon"
+                Text item=Sunrise_Time icon="sunrise"
+                Text item=Sunset_Time icon="sunset"
+                Text item=Sun_Elevation icon="sunmoon"
+                Text item=Moon_Elevation icon="sunmoon"
+                Text item=Zodiac_Sign icon="zodiac"
+                Text item=Moon_Phase
+                Text item=Moon_Next_Full icon="fullmoon"
+                Text item=Moon_Next_New icon="fullmoon"
+            }
+            Frame label="Погода" {
+                Text label="not ready" icon="sun_clouds"
+		
+            }
+
+		}
+            
+    }
+	Frame label="Показания счётчиков"{
+		Group item=itemD0P0 label="Электроэнергия" icon="pie"{
+			Frame label="Электроэнергия"{
+				Text item=Dds2381KWh
+				Text item=Dds238_hourcounter 
+				Text item=Dds238_daycounter 
+				Chart item=Dds2381KWh  label="kWh" refresh=5000 period=24h legend=true
+				Chart item=Dds238_hourcounter   refresh=50000 period=24h legend=true
+				Chart item=Dds238_daycounter   refresh=50000 period=W legend=true
+			}
+		}
+		Group item=itemD0P0 label="Холодное водоснабжение" icon="pie"{
+			Frame label="Холодное водоснабжение"{
+				Text item=CounterWater
+				Text item=WaterLiters
+				Text item=WaterVolume
+				Text item=Water_hourcounter 
+				Text item=Water_daycounter 
+				Chart item=WaterVolume  label="kbm" refresh=5000 period=24h legend=true 
+				Chart item=WaterLiters refresh=5000 period=24h legend=true
+				Chart item=Water_hourcounter   refresh=50000 period=24h legend=true
+				Chart item=Water_daycounter   refresh=50000 period=W legend=true
+			}
+		}
+	}
+//	Frame label="Отладка" {		
+//		Switch item=itemPHP1
+//		Switch item=itemPHP2
+//		Switch item=itemPHP3
+//		Switch item=itemPHP4
+//		Switch item=itemPHP5
+//		Switch item=itemPHP6
+//		Switch item=itemPHP7
+
+
+	}
+}
