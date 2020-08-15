@@ -262,14 +262,14 @@ then
 		{
 			sendCommand(itemD0P27, 0)
 			postUpdate(itemD0P27, 0)
-			logInfo("Childern", "нажали выключатель, выключаю свет в детской")
+			logInfo("сhildern", "нажали выключатель, выключаю свет в детской")
 
 		}
 		else
 		{
 			sendCommand(itemD0P27, 100)
 			postUpdate(itemD0P27, 100)
-			logInfo("Childern", "нажали выключатель, включаю свет в детской")
+			logInfo("сhildern", "нажали выключатель, включаю свет в детской")
 		}
 end
 
