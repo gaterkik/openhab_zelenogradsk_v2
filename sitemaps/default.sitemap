@@ -130,4 +130,7 @@ sitemap default label="квартира"{
 			}
 		}
 	}
+	Frame {
+		Switch item=itemPHP4
+	} 
 }
