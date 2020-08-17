@@ -12,11 +12,11 @@ strrequest = "/rest/items/itemPHP4/state"
 r.request("GET", strrequest)
 response = r.getresponse()
 print(type(response.read()))
-print(response.read().decode("utf-8"))
+print(type(response.read().decode("utf-8")))
 
 
 array = ["61bb46", "fdb827", "f5821f", "e03a3e", "963d97", "009ddc"]
-while response.read() == "b'ON'":
+while response.read().decode("utf-8") == 'ON':
     cmd1 = ''
     for i in range(0,58):
         cmd1 += random.choice(array) 

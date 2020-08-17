@@ -32,8 +32,8 @@ then
 		if (IsItDark.state == ON && FullLightKitchen.state == ON){  // Уже темно и не вечерний режим
 			sendCommand(LR_LEDLight_Color, ON)
 			postUpdate(LR_LEDLight_Color, ON)
-			sendCommand(itemD0P28, 100)
-			postUpdate(itemD0P28, 100)
+			sendCommand(itemD0P10, 100)
+			postUpdate(itemD0P10, 100)
 			Kitchen_MotionTimer.sendCommand(ON)
 			}
 		if (IsItDark.state == ON && FullLightKitchen.state == OFF){  // Уже темно и вечерний режим
