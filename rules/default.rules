@@ -64,6 +64,7 @@ result1 = result1 / 1000
 		logInfo("Bedroom", "light on")
 		sendCommand(itemD0P25, 100)
 		postUpdate(itemD0P25, 100)
+	    WeSleepBedroom.postUpdate(OFF)
     }
  }
  else if (result1 > 1){
@@ -76,7 +77,7 @@ end
 
 
 //------------------------------------------------------------------------
-// Обработка нажатия выключателя в спальне ближний к кровати. Меньше секунды просто переключение, дольше секунды - режим сна
+// Обработка нажатия выключателя в детской ближний к кровати. Меньше секунды просто переключение, дольше секунды - режим сна
 
 rule "cheldren start timer"
 when Item itemD0P16 changed to ON then
@@ -289,6 +290,7 @@ then
 		{
 			sendCommand(itemD0P25, 100)
 			postUpdate(itemD0P25, 100)
+			WeSleepBedroom.postUpdate(OFF)
 			logInfo("Bedroom", "нажали выключатель, включаю свет в спальне")
 		}
 end
