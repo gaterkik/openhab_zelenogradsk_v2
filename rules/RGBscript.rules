@@ -1,0 +1,13 @@
+rule "python script 4 run"
+
+when
+
+    Item itemPHP4 changed to ON
+
+then
+
+    val results = executeCommandLine("python3 /home/pi/temp/RGB4.py", 50000)
+
+    logInfo("pythonscript", results)
+
+end

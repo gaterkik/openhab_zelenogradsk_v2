@@ -24,7 +24,7 @@ Switch  Bathroom_MotionTimer {expire="15m,command=OFF"}
 Switch  Kitchen_MotionTimer {expire="15m,command=OFF"}
 Switch  Bedroom_MotionTimer {expire="15m,command=OFF"}
 Switch  Entrance_MotionTimer {expire="5m,command=OFF"}
-Switch  Corridor_MotionTimer {expire="5m,command=OFF"}
+Switch  Corridor_MotionTimer {expire="15m,command=OFF"}
 Switch  Children_MotionTimer {expire="15m,command=OFF"}
 
 
