@@ -46,8 +46,11 @@ Switch itemPHP5 "php script 5"
 Switch itemPHP6 "php script 6"
 Switch itemPHP7 "php script 7"
 
-
-
+//МЕГА 1(192.168.0.15)
+// I2C
+Number bedroomtemp "Температура в спальне" { channel = "megad:standard:incoming:megad15:i2cbus:thingbedroomtemp:par1" }
+Number bedroomhum "Влажность в спальне" { channel = "megad:standard:incoming:megad15:i2cbus:thingbedroomhum:par0" }
+Number bedroomlum "Освещённость в спальне" { channel = "megad:standard:incoming:megad15:i2cbus:thingbedroomlum:par1" }
 
 //входы
 Switch itemD0P0 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P0:in" }
@@ -62,7 +65,6 @@ Switch itemD0P16 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15
 Switch itemD0P17 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P17:in" }
 Switch itemD0P18 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P18:in" }
 Switch itemD0P20 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P20:in" }
-
 //выходы реле
 Switch itemD0P7 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad15:outputD0P7:out" }
 Switch itemD0P8 "out" (GF_Corridor) [ "Switchable" ] { channel = "megad:standard:incoming:megad15:outputD0P8:out" }

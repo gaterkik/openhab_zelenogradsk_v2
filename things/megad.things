@@ -1,5 +1,10 @@
 Bridge megad:tcp:incoming "Мост для входящих на порту 8989 MegaDevice" [port="8989"]{
 	Bridge device megad15 "MegaD-2561_15" [hostname="192.168.0.15", password="sec"]{
+		Bridge itoc i2cbus [port="30", scl="31"] {
+			Thing i2cbussensor thingbedroomtemp "Temperature at bedroom" [sensortype="htu21d", refresh="30", rawparam="&i2c_par=1"]
+			Thing i2cbussensor thingbedroomhum "Humidity at bedroom" [sensortype="htu21d", refresh="30"]
+			Thing i2cbussensor thingbedroomlum "Illumination at bedroom" [sensortype="max44009", refresh="30"]
+		}
 		
 		Thing standard inputD0P0 			"ванная 1"  			 @ "Выключатели" [port="0", refresh="10"]	//выключатель ванная 1
 		Thing standard inputD0P1 			"ванная 2"  			 @ "Выключатели" [port="1", refresh="10"]	//выключатель ванная 2  
