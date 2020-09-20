@@ -38,8 +38,6 @@ when
 then
 //вычисление расхода. Из текущих показаний счетчика вычитаются значения из базы на час раньше   
         var hour = Dds2381KWh.state as DecimalType - Dds2381KWh.historicState(now.minusHours(1)).state as DecimalType
-//вывод данных в лог для отладки
-        logInfo("TEST","sdm220_hourcounter = "+hour)
 //присваиваем значение Item
         postUpdate(Dds238_hourcounter, hour)
 end
@@ -50,11 +48,4 @@ when
 then
         var day = Dds2381KWh.state as DecimalType - Dds2381KWh.historicState(now.minusDays(1)).state as DecimalType
         postUpdate(Dds238_daycounter, day)
-end
-
-rule "5min"
-when
-	Time cron "0 */5 * * * ?"
-then
-	postUpdate(test, Dds2381KWh.state)
 end
