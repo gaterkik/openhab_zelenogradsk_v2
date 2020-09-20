@@ -17,4 +17,8 @@ Items {
        WaterLiters : strategy = everyMinute, restoreOnStartup
        Water_hourcounter : strategy = everyMinute, restoreOnStartup
        Water_daycounter : strategy = everyMinute, restoreOnStartup
+
+       bedroomtemp : strategy = everyMinute
+       bedroomhum : strategy = everyMinute
+       bedroomlum : strategy = everyMinute
 }

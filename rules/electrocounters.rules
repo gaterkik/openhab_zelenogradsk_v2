@@ -4,8 +4,10 @@ rule "System started Counters"
 when
    System started
 then
-	postUpdate(Dds2381KWh, 1099.5)
+	postUpdate(Dds2381KWh, 1742.4)
+	// Корректировка 20.09.2020 9:39
 
+//	postUpdate(Dds2381KWh, 1099.5)
 	// Корректировка 11.06.2020 9:39
 end 
 */
@@ -16,14 +18,18 @@ when
 then
    var Number Imp = Counterdds238.state as DecimalType
    var Number KWh = Dds2381KWh.state as DecimalType
+   var Number Wh = KWh * 1000
    
-   if ( Imp >= 20 )	
-   		{
-	    KWh = KWh + Imp/2000 // 1 кВт*ч - 2000 импульсов   0.5 Wh - 1 imp 
-		postUpdate(Dds2381KWh, KWh)
-		sendHttpGetRequest("http://192.168.0.15/sec/?pt=21&cnt=0")
-		logInfo("KWh","KWh = "+KWh)
-		}
+   if ( Imp >= 20 ){
+           Wh = Wh + Imp / 2
+           KWh = Wh / 1000
+           //KWh = KWh + Imp/2000 // 1 кВт*ч - 2000 импульсов   0.5 Wh - 1 imp 
+	   postUpdate(Dds2381KWh, KWh)
+	   sendHttpGetRequest("http://192.168.0.15/sec/?pt=21&cnt=0")
+	   logInfo("KWh","KWh = " + KWh)
+           logInfo("imp","KWh = " + Imp)
+           logInfo("Wh","Wh = " + Wh)
+	   }
 end
 
 rule "Energy by hour"

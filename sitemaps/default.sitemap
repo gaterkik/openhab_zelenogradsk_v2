@@ -135,5 +135,8 @@ sitemap default label="квартира"{
 		Text item=bedroomtemp
 		Text item=bedroomhum
 		Text item=bedroomlum
+		Chart item=bedroomtemp refresh=5000 period=24h legend=true 
+		Chart item=bedroomhum refresh=5000 period=24h legend=true 
+		Chart item=bedroomlum refresh=5000 period=24h legend=true 
 	} 
 }
