@@ -48,9 +48,9 @@ Switch itemPHP7 "php script 7"
 
 //МЕГА 1(192.168.0.15)
 // I2C
-Number bedroomtemp  "Температура в спальне"  { channel = "megad:i2cbussensor:incoming:megad15:i2cbus:bedroomhtu21d:par1" }
-Number bedroomhum   "Влажность в спальне"    { channel = "megad:i2cbussensor:incoming:megad15:i2cbus:bedroomhtu21d:par0" }
-Number bedroomlum   "Освещённость в спальне" { channel = "megad:i2cbussensor:incoming:megad15:i2cbus:bedroommax44009:par0" }
+Number bedroomtemp  "Температура в спальне [%.1f °C]"  { channel = "megad:i2cbussensor:incoming:megad15:i2cbus:bedroomhtu21d:par1" }
+Number bedroomhum   "Влажность в спальне [%.1f %%]"    { channel = "megad:i2cbussensor:incoming:megad15:i2cbus:bedroomhtu21d:par0" }
+Number bedroomlum   "Освещённость в спальне [%.2f lux]" { channel = "megad:i2cbussensor:incoming:megad15:i2cbus:bedroommax44009:par0" }
 
 //входы
 Switch itemD0P0 "in" (GF_Corridor) { channel = "megad:standard:incoming:megad15:inputD0P0:in" }
