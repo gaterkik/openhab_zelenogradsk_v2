@@ -37,6 +37,14 @@ sitemap default label="квартира"{
 			Frame label="Отопление" {	
 				Switch item=itemD0P24 label="Радиатор" icon="radiator" mappings=[ON="off", OFF="on"]
 			}
+			Frame {
+				Text item=bedroomtemp
+				Text item=bedroomhum
+				Text item=bedroomlum
+				Chart item=bedroomtemp refresh=5000 period=W legend=true 
+				Chart item=bedroomhum refresh=5000 period=W legend=true 
+				Chart item=bedroomlum refresh=5000 period=W legend=true 
+	}
 		}
 		Group item=itemD0P10 label="Детская" icon="boy_2"{
 			Frame label="Освещение" {
@@ -132,11 +140,5 @@ sitemap default label="квартира"{
 	}
 	Frame {
 		Switch item=itemPHP4
-		Text item=bedroomtemp
-		Text item=bedroomhum
-		Text item=bedroomlum
-		Chart item=bedroomtemp refresh=5000 period=24h legend=true 
-		Chart item=bedroomhum refresh=5000 period=24h legend=true 
-		Chart item=bedroomlum refresh=5000 period=24h legend=true 
 	} 
 }
