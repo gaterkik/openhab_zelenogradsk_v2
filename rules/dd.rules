@@ -13,7 +13,23 @@ then
     IsItDark.postUpdate(OFF)
 	WeSleepChildrensroom.postUpdate(OFF)
 	FullLightKitchen.postUpdate(OFF)
-	end
+end
+
+rule "eight o'clock in the morning"
+when
+	Time cron "0 0 6 * * ?"
+then
+	DDBedRoomDisable.postUpdate(ON)
+	WeSleepBedroom.postUpdate(OFF)
+end
+
+rule "eleven o'clock in the morning"
+when
+	Time cron "0 0 11 * * ?"
+then
+	DDBedRoomDisable.postUpdate(OFF)
+end
+	
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 rule "kitchen DD srabotal"
