@@ -14,7 +14,7 @@ Switch IsItDark
 
 
 Number test "тест0" 
-
+Number bedroom_lum_threshold "Пороговая освещённость в спальне.[%.0f lux]"
 Switch itemAllOff "Тушим свет"
 
 //Switch itemKitchenCountertop "Рабочая поверхность"

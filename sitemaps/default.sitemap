@@ -33,6 +33,8 @@ sitemap default label="квартира"{
 				Slider item=itemD0P25 label="Основной"
 				Switch item=DDBedRoomDisable label="Отключить датчик движения" icon="motion"
 				Switch item=WeSleepBedroom label="Режим сна"
+				Setpoint item=bedroom_lum_threshold label="+/-1 Пороговая освещённость [%.0f lux]" minValue=0 maxValue=500 step=1
+		        Setpoint item=bedroom_lum_threshold label="+/-10 Пороговая освещённость [%.0f lux]" minValue=0 maxValue=500 step=10
 			}	
 			Frame label="Отопление" {	
 				Switch item=itemD0P24 label="Радиатор" icon="radiator" mappings=[ON="off", OFF="on"]

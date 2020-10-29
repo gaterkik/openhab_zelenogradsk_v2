@@ -112,7 +112,7 @@ end
 
 rule "bedroom DD srabotal"
 when
-	Item itemD1P16 changed to ON // Сработал ДД
+	Item itemD1P16 changed to OFF // Сработал ДД
 then
 	if (itemD0P25.state as DecimalType > 0) { // Свет включен
 		Bedroom_MotionTimer.sendCommand(ON)   // Обнуляем таймер
@@ -130,12 +130,22 @@ then
 				logInfo("bedroom", "дд в спальне ночью - включаем свет в коридоре")
 				Corridor_MotionTimer.sendCommand(ON)
 				}
-			if (WeSleepBedroom.state == OFF){  // Выключен режим сна - включаем в спальне
-				sendCommand(itemD0P25, 100)
-				postUpdate(itemD0P25, 100)
-				logInfo("bedroom", "дд в спальне вечером - vklu4aem svet v spal'ne")
-				Bedroom_MotionTimer.sendCommand(ON)
-				}			
+			if (WeSleepBedroom.state == OFF){  // Выключен режим сна - смотрим на освещенность
+				var Number bedroomlum1 = bedroomlum.state as DecimalType
+				var Number bedroomlumthreshold1 = bedroom_lum_threshold.state as DecimalType
+				logInfo("bedroom","bed_room_lum = " + bedroomlum1)
+				logInfo("bedroom","bed_room_lum_threshold = " + bedroomlumthreshold1)
+				if (bedroomlum1 < bedroomlumthreshold1){
+					sendCommand(itemD0P25, 100)
+					postUpdate(itemD0P25, 100)
+					logInfo("bedroom", "дд в спальне. освещённость ниже порроговой. включаем свет")
+					Bedroom_MotionTimer.sendCommand(ON)
+				}
+					
+				else{
+					logInfo("bedroom", "дд в спальне. освещённость выше порроговой. ничего не делаем")
+				}
+			}			
 		}	
 	}	
 end
